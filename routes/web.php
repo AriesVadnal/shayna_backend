@@ -13,7 +13,7 @@
 
 Route::get('/', 'DashboardController@index')->name('dashboard');
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::resource('products','ProductController');
 Route::get('/gallery/{id}','ProductController@gallery')->name('gallery');
