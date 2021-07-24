@@ -13,10 +13,11 @@
 
 Route::get('/', 'DashboardController@index')->name('dashboard');
 
-Auth::routes(['register' => false]);
 
 Route::resource('products','ProductController');
 Route::get('/gallery/{id}','ProductController@gallery')->name('gallery');
 Route::resource('product-galleries','ProductGalleryController');
 Route::resource('transactions','TransactionController');
 Route::get('/transaction/{id}','TransactionController@setStatus')->name('transactions.status');
+
+Auth::routes(['register' => false]);
